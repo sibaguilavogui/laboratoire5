@@ -1,40 +1,70 @@
-\# 6GEI311 — Laboratoire 5 : Déploiement \& Distribution de charge (Flask + Nginx)
+\# 6GEI311 — Laboratoire 5 : Déploiement et Distribution de charge (Flask + Nginx)
 
 
 
-\*\*Équipe :\*\*  
+\*\*Équipe :\*Adama A Balde, Ibrarihma Diallo, Siba Elvis Guilavogui\*  
 
-\- Membre A : Siba Guilavogui (SG) — IP: <IP\_SIBA>, port: 3000  
+\- Membre A : Siba Guilavogui (SG) — IP: <IP de SIBA>, port: 3000  
 
-\- Membre B : Adama Alseny Baldé (AB) — IP: <TA\_IP>, port: 3001
-
-
-
-\## 🔹 Ce que j’ai appris
-
-\- Déployer une application Flask accessible sur un réseau local via IP et port.  
-
-\- Modifier le code du coéquipier pour créer une deuxième instance du serveur.  
-
-\- Configurer Nginx (côté membre A) pour équilibrer la charge entre les deux instances.  
-
-\- Comprendre le mécanisme de \*\*load balancing\*\* et la \*\*tolérance aux pannes\*\*.
+\- Membre B : Adama A Balde (AAB) et Ibrahima DIallo (IB) — IP: <172.20.10.13:3000>, port: 3001
 
 
 
-\## 🔹 Réponses aux questions de la manip
+\##  Objectif du laboratoire
+
+L’objectif de ce laboratoire était de comprendre comment déployer une application web simple à l’aide de \*\*Flask\*\* et d’expérimenter la \*\*distribution de charge\*\* (load balancing) à l’aide de \*\*Nginx\*\*.  
+
+Nous avons aussi appris à configurer deux serveurs Flask distincts sur des ports différents et à les relier à un même distributeur de charge pour assurer la répartition automatique des requêtes et la tolérance aux pannes.
+
+
+
+---
+
+
+
+\##  Ce que nous avons appris
+
+Au cours de ce laboratoire, j’ai appris plusieurs notions importantes :
+
+
+
+\- Comment installer et exécuter une application \*\*Flask\*\* sur une adresse IP locale et un port spécifique.  
+
+\- Comment faire communiquer deux applications Flask sur des ports différents (par exemple 3000 et 3001).  
+
+\- Comment configurer \*\*Nginx\*\* pour agir comme un \*\*proxy inverse (reverse proxy)\*\* et distribuer les requêtes entre deux serveurs Flask.  
+
+\- Comment \*\*GitHub\*\* peut être utilisé pour collaborer entre deux membres d’une équipe et partager le code facilement.  
+
+\- Le principe de \*\*tolérance aux pannes\*\* : même si un serveur s’arrête, Nginx continue de rediriger les requêtes vers le serveur encore disponible.  
+
+\- Le rôle des fichiers de configuration (`nginx.conf`) et des ports dans la gestion du trafic web.  
+
+\- L’importance de séparer les rôles (membre A / membre B) pour simuler un vrai environnement de déploiement collaboratif.
+
+
+
+Ce laboratoire nous a permis de mieux comprendre comment les applications web sont déployées dans la réalité et comment les entreprises utilisent des outils comme Nginx pour rendre leurs systèmes plus robustes et plus rapides.
+
+
+
+\##  Réponses aux questions de la manip
 
 
 
 \### Q1 : Que voit-on quand on lance Flask ?
 
-→ Le message “Hello, World! from SG at IP\_SIBA” sur `http://IP\_SIBA:3000/`
+→ Le message “Hello, World! venant de SG a l'adresse IP de SIBA” sur `http://IP de SIBA:3000/`
+
+Cela confirme que le serveur Flask fonctionne correctement sur la machine du membre A.
 
 
 
 \### Q2 : Que se passe-t-il quand on arrête Flask ?
 
-→ `http://IP\_SIBA:3000/` devient inaccessible (erreur de connexion).
+→ `http://(IP de SIBA):3000/` devient inaccessible (erreur de connexion).
+
+Cela signifie que le service Flask ne répond plus, car le serveur web n’est plus en écoute sur ce port.
 
 
 
@@ -42,11 +72,11 @@
 
 → Les requêtes alternent entre :
 
-\- “Hello, World! from SG…”  
+\- “Hello, World! venant de SG a l'adresse(on doit mettre le IP de siba)”  
 
-\- “Hello, World! from AB…”  
+\- “Hello, World! from AAB a l'adresse 172.20.10.13:3000”  
 
-→ C’est la \*\*distribution de charge\*\*.
+Cela montre que Nginx distribue automatiquement les requêtes entre les deux serveurs Flask
 
 
 
@@ -54,23 +84,43 @@
 
 →  
 
-\- `http://IP\_SIBA:3000/` ❌ ne répond plus  
+\- `http://IP de SIBA:3000/`  ne répond plus 
 
-\- `http://IP\_SIBA:8181/` ✅ fonctionne toujours  
+\- `http://172.20.10.13:3001/`  fonctionne toujours
 
-→ Nginx redirige les requêtes vers l’application du membre B.
+\- `http://IP de SIBA:8181/`  fonctionne toujours  
+
+Cela prouve que Nginx redirige automatiquement les requêtes vers le serveur disponible, assurant ainsi la tolérance aux pannes.
 
 
 
-\## 🔹 Captures d’écran à inclure
+\## Conclusion
 
-1\. Application Flask A en marche  
 
-2\. Application Flask B en marche  
 
-3\. Nginx avec alternance des réponses  
+En résumé, ce laboratoire m’a permis de comprendre les bases du déploiement d’applications web et du load balancing.
 
-4\. Nginx toujours accessible après arrêt de A
+J’ai appris à :
+
+
+
+Démarrer et configurer une application Flask.
+
+
+
+Configurer un serveur Nginx pour répartir le trafic.
+
+
+
+Tester la répartition et la redondance des serveurs.
+
+
+
+Collaborer efficacement via GitHub sur un même projet.
+
+
+
+Ce laboratoire m’a donné une vision concrète du fonctionnement des serveurs web dans un environnement professionnel où la fiabilité et la disponibilité sont essentielles.
 
 
 
