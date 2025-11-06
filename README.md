@@ -4,7 +4,7 @@
 
 \*\*Équipe :\*Adama A Balde, Ibrarihma Diallo, Siba Elvis Guilavogui\*  
 
-\- Membre A : Siba Guilavogui (SG) — IP: <IP de SIBA>, port: 3000  
+\- Membre A : Siba Guilavogui (SG) — IP: (IP de SIBA), port: 3000  
 
 \- Membre B : Adama A Balde (AAB) et Ibrahima DIallo (IB) — IP: <172.20.10.13:3000>, port: 3001
 
@@ -45,6 +45,10 @@ Au cours de ce laboratoire, j’ai appris plusieurs notions importantes :
 
 
 Ce laboratoire nous a permis de mieux comprendre comment les applications web sont déployées dans la réalité et comment les entreprises utilisent des outils comme Nginx pour rendre leurs systèmes plus robustes et plus rapides.
+
+
+
+---
 
 
 
@@ -91,6 +95,10 @@ Cela montre que Nginx distribue automatiquement les requêtes entre les deux ser
 \- `http://IP de SIBA:8181/`  fonctionne toujours  
 
 Cela prouve que Nginx redirige automatiquement les requêtes vers le serveur disponible, assurant ainsi la tolérance aux pannes.
+
+
+
+---
 
 
 
