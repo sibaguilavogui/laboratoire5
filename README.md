@@ -2,9 +2,9 @@
 
 
 
-\*\*Équipe :\*Adama A Balde, Ibrarihma Diallo, Siba Elvis Guilavogui\*  
+\*\*Équipe :\*Adama A Balde, Ibrahima Diallo, Siba Elvis Guilavogui\*  
 
-\- Membre A : Siba Guilavogui (SG) — IP: (IP de SIBA), port: 3000  
+\- Membre A : Siba Guilavogui (SG) — IP:<172.20.10.02>,Port:3000
 
 \- Membre B : Adama A Balde (AAB) et Ibrahima DIallo (IB) — IP: <172.20.10.13:3000>, port: 3001
 
@@ -24,7 +24,7 @@ Nous avons aussi appris à configurer deux serveurs Flask distincts sur des port
 
 \##  Ce que nous avons appris
 
-Au cours de ce laboratoire, j’ai appris plusieurs notions importantes :
+Au cours de ce laboratoire, nous avons plusieurs notions importantes:
 
 
 
@@ -58,7 +58,7 @@ Ce laboratoire nous a permis de mieux comprendre comment les applications web so
 
 \### Q1 : Que voit-on quand on lance Flask ?
 
-→ Le message “Hello, World! venant de SG a l'adresse IP de SIBA” sur `http://IP de SIBA:3000/`
+→ Le message “Hello, World! venant de SG a l'adresse IP de SIBA” sur `http://172.20.10.02:3000/`
 
 Cela confirme que le serveur Flask fonctionne correctement sur la machine du membre A.
 
@@ -66,7 +66,7 @@ Cela confirme que le serveur Flask fonctionne correctement sur la machine du mem
 
 \### Q2 : Que se passe-t-il quand on arrête Flask ?
 
-→ `http://(IP de SIBA):3000/` devient inaccessible (erreur de connexion).
+→ `http://172.20.10.02:3000/` devient inaccessible (erreur de connexion).
 
 Cela signifie que le service Flask ne répond plus, car le serveur web n’est plus en écoute sur ce port.
 
@@ -76,7 +76,7 @@ Cela signifie que le service Flask ne répond plus, car le serveur web n’est p
 
 → Les requêtes alternent entre :
 
-\- “Hello, World! venant de SG a l'adresse(on doit mettre le IP de siba)”  
+\- “Hello, World! venant de SG a l'adresse172.20.10.02”  
 
 \- “Hello, World! from AAB a l'adresse 172.20.10.13:3000”  
 
@@ -88,11 +88,11 @@ Cela montre que Nginx distribue automatiquement les requêtes entre les deux ser
 
 →  
 
-\- `http://IP de SIBA:3000/`  ne répond plus 
+\- `http://172.20.10.02:3000/`  ne répond plus 
 
 \- `http://172.20.10.13:3001/`  fonctionne toujours
 
-\- `http://IP de SIBA:8181/`  fonctionne toujours  
+\- `http://172.20.10.02:8181/`  fonctionne toujours  
 
 Cela prouve que Nginx redirige automatiquement les requêtes vers le serveur disponible, assurant ainsi la tolérance aux pannes.
 
