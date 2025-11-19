@@ -2,9 +2,9 @@
 
 
 
-\*\*Équipe :Siba Guilavogui: GUIS15049901
-              Adama A Balde: BALA27070105
-              Ibrahima Diallo:DIAI01100203
+\*\*Équipe :Siba Guilavogui: GUIS15049901 ;
+              Adama A Balde: BALA27070105 ;
+              Ibrahima Diallo:DIAI01100203;
 
 \*  
 
