@@ -2,7 +2,11 @@
 
 
 
-\*\*Équipe :\*Adama A Balde, Ibrahima Diallo, Siba Elvis Guilavogui\*  
+\*\*Équipe :Siba Guilavogui: GUIS15049901
+              Adama A Balde: BALA27070105
+              Ibrahima Diallo:DIAI01100203
+
+\*  
 
 \- Membre A : Siba Guilavogui (SG) — IP:<172.20.10.02>,Port:3000
 
